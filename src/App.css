@@ -1,0 +1,148 @@
+#Header {
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1.8px #20B2AA;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    line-height: 1.5;
+    
+}
+
+#Nav {
+    padding: 15px 0;
+    border: 1px solid grey;
+    list-style: none;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+#Container {
+    height: auto;
+    border: 1px solid #ccc;
+    background-color: #FFFAFA;
+    width: 1441px;
+    height: 2000px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#box
+.item-1, 
+.item-2, 
+.item-3 {
+	position: absolute;
+    display: block;
+    top: 7em;
+    padding: 4px 0;
+    
+    
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    animation-duration: 20s;
+	/*animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    align-items: center;
+    padding: 15px 0;
+    border: 1px solid grey;
+    list-style: none;
+}
+
+#box
+.item-1{
+	animation-name: anim-1;
+}
+
+#box
+.item-2{
+	animation-name: anim-2;
+}
+
+#box
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+    8.3%,25% { left: 25%; opacity: 1; }
+    33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+    41.63%, 58.29% { left: 25%; opacity: 1; }
+    66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 66.66% { left: -100%; opacity: 0; }
+    74.96%, 91.62% { left: 25%; opacity: 1; }
+    100% { left: 110%; opacity: 0; }
+}*/
