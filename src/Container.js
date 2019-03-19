@@ -15,7 +15,7 @@ export default class Container extends React.Component {
 
     componentWillMount() {
         let that = this;
-        $.get('http://localhost:3000/', function(data){
+        $.get('http://localhost:4000/', function(data){
             let articles = data.map(function(pipa, i){
                 return (
                     <Themas key={i} item={pipa}></Themas>
@@ -24,7 +24,7 @@ export default class Container extends React.Component {
             that.setState({articles: articles});
         })
 
-        $.get('http://localhost:3000/coverpage', function(data){
+        $.get('http://localhost:4000/coverpage', function(data){
             let coverpage= data.map(function(opp, i){
                 return(
                     <Secthemas key={i} item={opp}></Secthemas>
