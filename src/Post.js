@@ -12,7 +12,7 @@ export default class Post extends React.Component {
     handleSolansh() {
         let input = document.getElementById('Comentario').nodeValue
         if(input !== '') {
-            $.post('http://localhost:3000/commentario', {commentario : input}, function(response){
+            $.post('http://localhost:4000/commentario', {commentario : input}, function(response){
                 console.log(response);
             })
         }
@@ -20,7 +20,7 @@ export default class Post extends React.Component {
 
     componentWillMount() {
         let that = this;
-        $.get('http://localhost:3000/commentario', function(data){
+        $.get('http://localhost:4000/commentario', function(data){
             let commentario = data.map(function(com, i){
                 return (
                     <p key={i}>{com.commentario_body}</p>

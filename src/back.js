@@ -54,9 +54,9 @@ db.serialize ( () => {
 
     db.run('CREATE TABLE IF NOT EXISTS coverpage (coverpage_id INTEGER PRIMARY KEY AUTOINCREMENT, coverpage_name TEXT, coverpage_video TEXT, coverpage_description TEXT, coverpage_category_id INTEGER, type_id INTEGER, FOREIGN KEY(coverpage_category_id) REFERENCES coverpage_category(coverpage_category_id), FOREIGN KEY (type_id) REFERENCES type(type_id))');
 
-    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Bethany Hamilton', "BethanyHamilton/Maldives.mp4", '“I WAS HOPING IT WAS A BIT BIGGER.”', 1, 2);
-    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Kali', 'Stretchy, Quik Dry & LightLes boardshorts Quiksilver Highline sont conçus pour la performance.', "Kali/video2.mp4", 2,2);
-    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Quiksilver', 'Adapt collection Des modèles confortables conçus pour vous garder au frais et chaud quelles que soient les conditions extérieures.', "Quiksilver/VideoQuiksilver.mp4", 3, 2);
+    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Bethany Hamilton', "/BethanyHamilton/Maldives.mp4", '“I WAS HOPING IT WAS A BIT BIGGER.”', 1, 2);
+    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Kali', 'Stretchy, Quik Dry & LightLes boardshorts Quiksilver Highline sont conçus pour la performance.', "/Kali/video2.mp4", 2,2);
+    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Quiksilver', 'Adapt collection Des modèles confortables conçus pour vous garder au frais et chaud quelles que soient les conditions extérieures.', "/Quiksilver/VideoQuiksilver.mp4", 3, 2);
  
     db.run('CREATE TABLE IF NOT EXISTS commentario (commeentario_id INTEGER PRIMARY KEY AUTOINCREMENT, commentario_body VACHAR(250), articles_id INTEGER, FOREIGN KEY (articles_id) REFERENCES articles(articles_id))')
 
@@ -67,7 +67,7 @@ db.serialize ( () => {
 });
 
 
-app.get('/', function(request, response) {
+app.get('/articles', function(request, response) {
     db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles', function(error, data) {
         if (!error) response.send(data);
       else console.log(error);
@@ -75,7 +75,7 @@ app.get('/', function(request, response) {
 })
 
 app.get('/coverpage', function(request, response) {
-    db.all('SELECT * FROM type NATURAL JOIN products NATURAL JOIN products_category', function(error, data) {
+    db.all('SELECT * FROM type NATURAL JOIN coverpage NATURAL JOIN coverpage_category', function(error, data) {
         if (!error) response.send(data);
       else console.log(error);
     })
@@ -96,7 +96,7 @@ app.get('/commentario', function(request, response){
   }) 
   
 
-  app.listen(3000, function(error) {
+  app.listen(4000, function(error) {
     if (!error) console.log("Bonjour");
   else console.log(error);
   })
