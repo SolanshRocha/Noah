@@ -58,7 +58,7 @@ db.serialize ( () => {
     db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Kali', 'Stretchy, Quik Dry & LightLes boardshorts Quiksilver Highline sont conçus pour la performance.', "Kali/video2.mp4", 2,2);
     db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Quiksilver', 'Adapt collection Des modèles confortables conçus pour vous garder au frais et chaud quelles que soient les conditions extérieures.', "Quiksilver/VideoQuiksilver.mp4", 3, 2);
  
-    db.run('CREATE TABLE IF NOT EXISTS comments (comments_id INTEGER PRIMARY KEY AUTOINCREMENT, comments_body VACHAR(250), articles_id INTEGER, FOREIGN KEY (articles_id) REFERENCES articles(articles_id))')
+    db.run('CREATE TABLE IF NOT EXISTS commentario (commeentario_id INTEGER PRIMARY KEY AUTOINCREMENT, commentario_body VACHAR(250), articles_id INTEGER, FOREIGN KEY (articles_id) REFERENCES articles(articles_id))')
 
     db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles', function(error, data) {
         if (!error) console.log(data);
@@ -81,19 +81,20 @@ app.get('/coverpage', function(request, response) {
     })
   });
 
-app.get('/comments', function(request, response){
-    db.all('SELECT * FROM comments', function(error, data) {
+app.get('/commentario', function(request, response){
+    db.all('SELECT * FROM commentario', function(error, data) {
       if (!error) response.send(data);
       else console.log(error);
     })
   });
   
-  app.post('/comments', function (request, response){
-    db.run('INSERT INTO comments (comments_body) VALUES (?)', request.body.comments, function(error) { 
+  app.post('/commentario', function (request, response){
+    db.run('INSERT INTO commentario (commentario_body) VALUES (?)', request.body.commentario, function(error) { 
       if(!error) response.send("here it is");
       else console.log(error);
     })
   }) 
+  
 
   app.listen(3000, function(error) {
     if (!error) console.log("Bonjour");

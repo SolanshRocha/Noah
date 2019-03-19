@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Container from './Container.js';
 import Footer from './Footer.js';
 import './App.css';
-
+import Post from './Post.js';
 
 
 export default class App extends React.Component {
@@ -14,6 +14,7 @@ export default class App extends React.Component {
       <Header></Header>
       <Nav></Nav>
       <Container></Container>
+      <Post></Post>
       <Footer></Footer>
 
       </div>
