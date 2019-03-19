@@ -1,20 +1,37 @@
 import React from 'react';
+import New from './New';
+import $ from'jquery';
 
 export default class Themas extends React.Component {
-    render () {
-        console.log(this.props.item)
-        return (
-            <div className="Secthemas">
-            <h2>{this.props.item.articles_category_name}</h2>
-            <div className="imgsec">
-            <img src={process.env.PUBLIC_URL + this.props.item.articles_photo} alt="HEY"/>
-            </div>
-            <div className="Subtitulo">
-            <p>{this.props.item.articles_title}</p>
-            </div>
-            </div>
-        )
+
+    constructor(){
+        super();
+        this.state = {
+        articles: []
+        }
     }
+
+    componentWillMount() {
+        let that = this;
+        $.get('http://localhost:4000/articles', function(data){
+            let articles = data.map(function(pipa, i){
+                return (
+                    <New key={i} item={pipa}></New>
+
+                )
+            })
+            that.setState({articles: articles});
+        })
+
+    }
+
+    render () {
+        return (
+    <div id="articles">
+        {this.state.articles}
+        </div>
+        )
+}
 }
 
 
