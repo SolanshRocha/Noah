@@ -1,6 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Themas from './Themas';
 import Nav from './Nav';
 import Secthemas from './Secthemas';

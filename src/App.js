@@ -9,12 +9,11 @@ import Post from './Post.js';
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div id="global">
       <Header></Header>
       <Container></Container>
       <Post></Post>
       <Footer></Footer>
-
       </div>
     )
   }

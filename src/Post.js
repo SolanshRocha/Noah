@@ -11,7 +11,7 @@ export default class Post extends React.Component {
     }
 
     handleSolansh() {
-        let input = document.getElementById('Comentario').nodeValue
+        let input = document.getElementById('Comentario').value
         if(input !== '') {
             $.post('http://localhost:4000/commentario', {commentario : input}, function(response){
                 console.log(response);

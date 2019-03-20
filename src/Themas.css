@@ -1,3 +1,6 @@
-#contain1 {
-    
+#ContainerG {
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: grey; 
 }

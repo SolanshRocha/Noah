@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Themas from './Themas';
 
 
 export default class Nav extends Component {
-
     render () {
         return (
                 <div>
@@ -25,7 +23,7 @@ export default class Nav extends Component {
                             <Link to="/Man"> Man high Performances</Link>
                         </li>
                         <li>
-                            <Link to="/Start" >Start surfing</Link>
+                            <Link to="/Start">Start surfing</Link>
                         </li>
                     </ul>
                 </div>

@@ -18,7 +18,6 @@ export default class Themas extends React.Component {
             let articles = data.map(function(pipa, i){
                 return (
                     <Home key={i} item={pipa}></Home>
-
                 )
             })
             that.setState({articles: articles});
@@ -28,7 +27,7 @@ export default class Themas extends React.Component {
 
      render () {
         return (
-            <div id="Contain1">
+            <div id="ContainerG">
                 {this.state.articles}
             </div>
         )

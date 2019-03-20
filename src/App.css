@@ -6,6 +6,7 @@
     font-family: "Times New Roman", Times, serif;
     font-size: 30px;
     line-height: 1.5;
+    margin-left: 50px;
     
 }
 
@@ -26,8 +27,13 @@
     height: auto;
     border: 1px solid #ccc;
     background-color: #FFFAFA;
-    width: 1441px;
-    height: 2000px;
+    width: 1260px;
+    height: 1240px;
+}
+
+#global {
+    width: 1080px;
+    height: 1080px;
 }
 
 
