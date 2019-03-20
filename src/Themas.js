@@ -1,19 +1,46 @@
 import React from 'react';
-
+import Home from './Home';
+import $ from'jquery';
+import './Themas.css';
 export default class Themas extends React.Component {
-    render () {
-        console.log(this.props.item)
-        return (
-            <div className="Themas">
-            <h2>{this.props.item.coverpage_category_name}</h2>
-            <div className="Lupitavideos">
-            <video src={process.env.PUBLIC_URL + this.props.item.coverpage_video} alt="Cannot load"></video>
-            </div>
-            <div className="Description">
-            <p>{this.props.item.coverpage_description}</p>
-            </div>
-            
-        </div>
-        )
+
+    constructor(){
+        super();
+        this.state = {
+        articles: []
+        }
     }
+
+    componentWillMount() {
+        let that = this;
+        $.get('http://localhost:4000/coverpage', function(data){
+            console.log(data);
+            let articles = data.map(function(pipa, i){
+                return (
+                    <Home key={i} item={pipa}></Home>
+
+                )
+            })
+            that.setState({articles: articles});
+        })
+
+    }
+
+     render () {
+        return (
+            <div id="Contain1">
+                {this.state.articles}
+            </div>
+        )
 }
+}
+
+
+
+
+
+
+
+
+
+

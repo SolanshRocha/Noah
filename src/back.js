@@ -29,22 +29,22 @@ db.serialize ( () => {
 
     db.run('CREATE TABLE IF NOT EXISTS articles (articles_id INTEGER PRIMARY KEY AUTOINCREMENT, articles_name TEXT, articles_title TEXT, articles_photo TEXT, articles_category_id INTEGER, type_id INTEGER, FOREIGN KEY(articles_category_id) REFERENCES articles_category(articles_category_id), FOREIGN KEY (type_id) REFERENCES type(type_id))');
    
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Bethany', 'Bethany Hamilton confirms maddog lunarit legend status with total conquering of chopes', "Bethany/bet1.jpg", 1, 1);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Medina-claim', 'world title: Medina claims his second world title', "Medina-claim/medina.jpg", 1, 1);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'pipemaster','Sean Doherty: Pipe day 1 - war pigs', "pipemaster/pipemaster1.jpeg", 1, 1);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Sean', 'Sean Doherty: Pipe day 1 - war pigs', "Sean/wilson.jpg", 1, 1);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'teambilla', 'Billabong teal barbie is a sweet gathering of the tribe', "teambilla/billabong.jpg", 1, 1);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', '90woman', 'We celebrate the heroic woman of 90’s pro surfing', "90woman/women.jpg", 1, 2);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Koa', 'The wit & wisdom of Tim Bonython', "Koa/koasmith.jpg", 1, 2);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Wit', 'How to surf 20 foot Uluwatu', "Wit/thewit.jpg", 1, 2);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Frieda Zamba', 'Frieda Zamba', "Frieda Zamba/frieda.jpg", 1, 3);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Layne Beachley', 'Layne Beachley', "Layne Beachley/Layne.jpg", 1, 3);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Lisa Andersen', 'Lisa Andersen', "Lisa Andersen/lisa.jpg", 1, 3);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Wendi botha', 'Wendi botha', "Wendi botha/wendib.jpg", 1, 3);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', '157tricks', ' Exactly 157 tricks', "157tricks/157tricks.jpg", 1, 4);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Kgi', 'Mexican do giant airs', "Kgi/kgi.jpg", 1, 4);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'the-curl', 'Another decade ripping the curl', "the-curl/thecurl.jpg", 1, 4);
-    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, articles_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Coaching', 'About coaching', "Coaching/kid.jpg", 1, 5);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Bethany', 'Bethany Hamilton confirms maddog lunarit legend status with total conquering of chopes', "Bethany/bet1.jpg", 1, 1);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Medina-claim', 'world title: Medina claims his second world title', "Medina-claim/medina.jpg", 1, 1);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'pipemaster','Sean Doherty: Pipe day 1 - war pigs', " pipemaster/pipemaster1.jpeg", 1, 1);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Sean', 'Sean Doherty: Pipe day 1 - war pigs', "Sean/wilson.jpg", 1, 1);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'teambilla', 'Billabong teal barbie is a sweet gathering of the tribe', "teambilla/billabong.jpg", 1, 1);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', '90woman', 'We celebrate the heroic woman of 90’s pro surfing', "90woman/women.jpg", 1, 2);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Koa', 'The wit & wisdom of Tim Bonython', "Koa/koasmith.jpg", 1, 2);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Wit', 'How to surf 20 foot Uluwatu', "Wit/thewit.jpg", 1, 2);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Frieda Zamba', 'Frieda Zamba', "Frieda Zamba/frieda.jpg", 1, 3);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Layne Beachley', 'Layne Beachley', "Layne Beachley/Layne.jpg", 1, 3);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Lisa Andersen', 'Lisa Andersen', "Lisa Andersen/lisa.jpg", 1, 3);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Wendi botha', 'Wendi botha', "Wendi botha/wendib.jpg", 1, 3);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', '157tricks', ' Exactly 157 tricks', "157tricks/157tricks.jpg", 1, 4);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Kgi', 'Mexican do giant airs', "Kgi/kgi.jpg", 1, 4);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'the-curl', 'Another decade ripping the curl', "the-curl/thecurl.jpg", 1, 4);
+    db.run('INSERT INTO articles (articles_name, articles_title, articles_photo, type_id, articles_category_id) VALUES (?, ?, ?, ?, ?)', 'Coaching', 'About coaching', "Coaching/kid.jpg", 1, 5);
 
     db.run('CREATE TABLE IF NOT EXISTS coverpage_category (coverpage_category_id INTEGER PRIMARY KEY AUTOINCREMENT, coverpage_category_name TEXT)');
 
@@ -54,46 +54,71 @@ db.serialize ( () => {
 
     db.run('CREATE TABLE IF NOT EXISTS coverpage (coverpage_id INTEGER PRIMARY KEY AUTOINCREMENT, coverpage_name TEXT, coverpage_video TEXT, coverpage_description TEXT, coverpage_category_id INTEGER, type_id INTEGER, FOREIGN KEY(coverpage_category_id) REFERENCES coverpage_category(coverpage_category_id), FOREIGN KEY (type_id) REFERENCES type(type_id))');
 
-    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Bethany Hamilton', "BethanyHamilton/Maldives.mp4", '“I WAS HOPING IT WAS A BIT BIGGER.”', 1, 2);
-    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Kali', 'Stretchy, Quik Dry & LightLes boardshorts Quiksilver Highline sont conçus pour la performance.', "Kali/video2.mp4", 2,2);
-    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Quiksilver', 'Adapt collection Des modèles confortables conçus pour vous garder au frais et chaud quelles que soient les conditions extérieures.', "Quiksilver/VideoQuiksilver.mp4", 3, 2);
+    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Bethany Hamilton', "/BethanyHamilton/Maldives.mp4", '“I WAS HOPING IT WAS A BIT BIGGER.”', 1, 2);
+    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Kali', '/Kali/video2.mp4', "Stretchy, Quik Dry & LightLes boardshorts Quiksilver Highline sont conçus pour la performance.", 2,2);
+    db.run('INSERT INTO coverpage (coverpage_name, coverpage_video, coverpage_description, coverpage_category_id, type_id) VALUES (?, ?, ?, ?, ?)', 'Quiksilver', '/Quiksilver/VideoQuiksilver.mp4', "Adapt collection Des modèles confortables conçus pour vous garder au frais et chaud quelles que soient les conditions extérieures.", 3, 2);
  
-    db.run('CREATE TABLE IF NOT EXISTS comments (comments_id INTEGER PRIMARY KEY AUTOINCREMENT, comments_body VACHAR(250), articles_id INTEGER, FOREIGN KEY (articles_id) REFERENCES articles(articles_id))')
+    db.run('CREATE TABLE IF NOT EXISTS commentario (commeentario_id INTEGER PRIMARY KEY AUTOINCREMENT, commentario_body VACHAR(250), articles_id INTEGER, FOREIGN KEY (articles_id) REFERENCES articles(articles_id))')
 
-    db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles', function(error, data) {
-        if (!error) console.log(data);
+});
+
+
+app.get('/News', function(request, response) {
+    db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles WHERE articles_category_id = 1', function(error, data) {
+        if (!error) response.send(data);
       else console.log(error);
     })
 });
 
-
-app.get('/', function(request, response) {
-    db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles', function(error, data) {
-        if (!error) response.send(data);
-      else console.log(error);
-    })
-})
-
 app.get('/coverpage', function(request, response) {
-    db.all('SELECT * FROM type NATURAL JOIN products NATURAL JOIN products_category', function(error, data) {
+    db.all('SELECT * FROM type NATURAL JOIN coverpage NATURAL JOIN coverpage_category', function(error, data) {
         if (!error) response.send(data);
       else console.log(error);
     })
   });
 
-app.get('/comments', function(request, response){
-    db.all('SELECT * FROM comments', function(error, data) {
+  app.get('/Stories', function(request, response) {
+    db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles WHERE articles_category_id = 2', function(error, data) {
+        if (!error) response.send(data);
+      else console.log(error);
+    })
+});
+
+app.get('/Woman', function(request, response) {
+  db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles WHERE articles_category_id = 3', function(error, data) {
+      if (!error) response.send(data);
+    else console.log(error);
+  })
+});
+
+app.get('/Man', function(request, response) {
+  db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles WHERE articles_category_id = 4', function(error, data) {
+      if (!error) response.send(data);
+    else console.log(error);
+  })
+});
+
+app.get('/Start', function(request, response) {
+  db.all('SELECT * FROM type NATURAL JOIN articles_category NATURAL JOIN articles WHERE articles_category_id = 5', function(error, data) {
+      if (!error) response.send(data);
+    else console.log(error);
+  })
+});
+
+app.get('/commentario', function(request, response){
+    db.all('SELECT * FROM commentario', function(error, data) {
       if (!error) response.send(data);
       else console.log(error);
     })
   });
   
-  app.post('/comments', function (request, response){
-    db.run('INSERT INTO comments (comments_body) VALUES (?)', request.body.comments, function(error) { 
+  app.post('/commentario', function (request, response){
+    db.run('INSERT INTO commentario (commentario_body) VALUES (?)', request.body.commentario, function(error) { 
       if(!error) response.send("here it is");
       else console.log(error);
     })
   }) 
+  
 
   app.listen(4000, function(error) {
     if (!error) console.log("Bonjour");

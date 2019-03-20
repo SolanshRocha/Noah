@@ -5,7 +5,7 @@ export default class Footer extends React.Component {
         return (
             <p>
                 Protection des données |  Condtions générales de vente | 
-                ©2018 Quiksilver. All rights reserved 
+                ©2018 Quiksilver. All rights reserved by Nicolas and Solansh
             </p>
         )
     }

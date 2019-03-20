@@ -1,49 +1,37 @@
 import React from 'react';
-import Themas from './Themas';
 import $ from 'jquery';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Themas from './Themas';
+import Nav from './Nav';
 import Secthemas from './Secthemas';
+import Tercethemas from './Tercethemas';
+import Cuartothemas from './Cuartothemas';
+import Quintothemas from './Quintothemas';
+import Sextothemas from './Sextothemas';
+import './Container.css';
 
 export default class Container extends React.Component {
-
+    
     constructor(){
-        super();
+        super()
         this.state = {
-            articles : [],
-            coverpage: []
+        coverpage: []
         }
     }
-
-    componentWillMount() {
-        let that = this;
-        $.get('http://localhost:4000/', function(data){
-            let articles = data.map(function(pipa, i){
-                return (
-                    <Themas key={i} item={pipa}></Themas>
-                )
-            })
-            that.setState({articles: articles});
-        })
-
-        $.get('http://localhost:4000/coverpage', function(data){
-            let coverpage= data.map(function(opp, i){
-                return(
-                    <Secthemas key={i} item={opp}></Secthemas>
-
-                )
-            })
-            that.setState({coverpage: coverpage});
-        })
-}
 
     render () {
         return ( 
         <div id="Container">
-        <div id="Articles">
-        {this.state.articles}
-        </div>
-        <div id="Coverpage">
+                    <Router>
+                        <Nav/>
+                        <Route exact path="/" component = {Themas}/>
+                        <Route path="/News" component = {Secthemas}/>
+                        <Route path="/Stories" component = {Tercethemas}/>
+                        <Route path="/Woman" component = {Cuartothemas}/>
+                        <Route path="/Man" component = {Quintothemas}/>
+                        <Route path="/start" component = {Sextothemas}/>
+                    </Router>
         {this.state.coverpage}
-        </div>
         </div>
         )
     }
